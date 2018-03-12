@@ -8,7 +8,7 @@
  */
 let kaisi = () => {
 	// アプリのタイトルを設定する
-	ars.taitoru('診断アプリのタイトル');
+	ars.taitoru('明日の12時　気分診断！');
 
 	// 質問1を表示する
 	miseruQ1();
@@ -25,19 +25,37 @@ let miseruQ1 = () => {
 	let q = new Situmon(1);
 
 	// 質問文
-	q.bun('問題文の表示');
+	q.bun('今日のお昼ごはんは何を食べた？');
 
 	// 選択肢が文章の場合はt, 画像の場合はiをセット
 	q.syurui('t');
 
 	// 選択肢を追加していく
-	q.sentakusi('選択肢1');
-	q.sentakusi('選択肢2');
-	q.sentakusi('選択肢3');
-	q.sentakusi('選択肢4');
+	q.sentakusi('好きなお弁当');
+	q.sentakusi('好きじゃないお弁当');
+	q.sentakusi('救世軍の会席');
+	q.sentakusi('珍しくお父さんが作ってくれたお弁当');
 
 };
 
+let miseruQ2= () => {
+	// 質問を始めるときは new Situmon(?)する
+	// 引数(?)は、質問の番号（質問1なので1をセット）
+	let q = new Situmon();
+
+	// 質問文
+	q.bun('明日の楽しみな授業は？');
+
+	// 選択肢が文章の場合はt, 画像の場合はiをセット
+	q.syurui('i');
+
+	// 選択肢を追加していく
+	q.sentakusi('it.JPG');
+	q.sentakusi('rika.JPG');
+	q.sentakusi('kogaku.JPG');
+	q.sentakusi('tema.JPG');
+
+};
 
 /**
  * 全質問が終わり、診断結果ページへ移動する
@@ -59,8 +77,13 @@ let eranda = (bangou) => {
 	// 1問目に答えたら
 	if(bangou == 1){
 		// 診断結果に行く
-		miseruSindan();
+		miseruQ2();
 	}
+	    // 2問目の回答後は診断結果に行く
+    else if(bangou == 2){
+        miseruSindan();
+    }
+
 };
 
 

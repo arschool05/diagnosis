@@ -31,28 +31,28 @@ let miseruKekka = (kekka) => {
 
 	//結果が1だった場合
 	if(kekka == 1){
-		midasi = '診断結果1の見出し';
-		gazo = 'img/sample/r1.jpg';
-		setumei = '診断結果1の説明文がここに入ります';
+		midasi = '「お腹ペコペコぉ」';
+		gazo = 'onakahetta.png';
+		setumei = '明日は疲れてお腹ペコペコ・・朝ごはん、しっかり食べよう！';
 
 	}
 	//結果が2だった場合
 	else if(kekka == 2){
-		midasi = '診断結果2の見出し';
-		gazo = 'img/sample/r2.jpg';
-		setumei = '診断結果2の説明文がここに入ります';
+		midasi = '「早く帰りたぁい」';
+		gazo = 'ieda.png';
+		setumei = '楽しいこともあるさ！あと3時間だ！';
 	}
 	//結果が3だった場合
 	else if(kekka == 3){
-		midasi = '診断結果3の見出し';
-		gazo = 'img/sample/r3.jpg';
-		setumei = '診断結果3の説明文がここに入ります';
+		midasi = '「ルンルンルン♪」';
+		gazo = 'tanosii.png';
+		setumei = '明日は超ハッピー！今日は早く寝て、体力温存！';
 	}
 	//結果が4だった場合
 	else if(kekka == 4){
-		midasi = '診断結果4の見出し';
-		gazo = 'img/sample/r4.jpg';
-		setumei = '診断結果4の説明文がここに入ります';
+		midasi = '「ムッカムカ」';
+		gazo = 'okoru.png';
+		setumei = '友達とケンカ‥おはよう！と元気に挨拶〜'
 	}
 
 	//結果を画面に表示する
