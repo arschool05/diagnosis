@@ -34,7 +34,6 @@ let miseruKekka = (kekka) => {
 		midasi = '「お腹ペコペコぉ」';
 		gazo = 'onakahetta.png';
 		setumei = '明日は疲れてお腹ペコペコ・・朝ごはん、しっかり食べよう！';
-
 	}
 	//結果が2だった場合
 	else if(kekka == 2){
@@ -52,7 +51,7 @@ let miseruKekka = (kekka) => {
 	else if(kekka == 4){
 		midasi = '「ムッカムカ」';
 		gazo = 'okoru.png';
-		setumei = '友達とケンカ‥おはよう！と元気に挨拶〜'
+		setumei = '友達とケンカ・・おはよう！と元気に挨拶〜';
 	}
 
 	//結果を画面に表示する

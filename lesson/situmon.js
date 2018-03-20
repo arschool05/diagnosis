@@ -41,7 +41,7 @@ let miseruQ1 = () => {
 let miseruQ2= () => {
 	// 質問を始めるときは new Situmon(?)する
 	// 引数(?)は、質問の番号（質問1なので1をセット）
-	let q = new Situmon();
+	let q = new Situmon(2);
 
 	// 質問文
 	q.bun('明日の楽しみな授業は？');
@@ -81,6 +81,7 @@ let eranda = (bangou) => {
 	}
 	    // 2問目の回答後は診断結果に行く
     else if(bangou == 2){
+    	
         miseruSindan();
     }
 
@@ -95,21 +96,53 @@ let eranda = (bangou) => {
 let keisan = () => {
 	//質問1の回答は、ars.getAnswer(1)で取れる。引数は質問番号。
 	let a1 = ars.toruKotae(1);
+	
+	//質問2の回答は、ars.toruKotae(2)で取れる。
+	let a2 = ars.toruKotae(2);
 
-	let kekka = 0; //結果
+	let ten1 = 0;
 
-	// 質問1の回答によって、結果を変える
-	if(a1 == 0) {
-		kekka = 1;
+	if(a1 == 0){
+    	ten1 = 0;
+	} else if(a1 == 1){
+    	ten1 = 1;
+	} else if(a1 == 2) {
+    	ten1 = 2;
+	} else if(a1 == 3) {
+    	ten1 = 3;
 	}
-	else if(a1 == 1) {
-		kekka = 2;
+// 質問2での得点
+	let ten2 = 0;
+
+	if(a2 == 0){
+    	ten2 = 10;
+	} else if(a2 == 1){
+    	ten2 = 20;
+	} else if(a2 == 2) {
+    	ten2 = 30;
+	} else if(a2 == 3) {
+    	ten2 = 40;
 	}
-	else if(a1 == 2) {
-		kekka = 3;
+
+//得点合計（質問1の得点 + 質問2の得点）
+	let goukei = ten1 + ten2;
+
+//診断結果
+	let kekka = 0;
+	console.log(goukei);
+
+// 点数によって、診断結果を分ける
+	if(goukei == 10 || goukei ==21 || goukei == 12 || goukei == 33){
+    	kekka = 1;
 	}
-	else if(a1 == 3) {
-		kekka = 4;
+	else if(goukei == 20 || goukei ==30 || goukei ==31 || goukei ==22 || goukei ==13){
+    	kekka = 2;
+	}
+	else if(goukei == 40 || goukei ==11 || goukei ==42 || goukei ==23){
+    	kekka = 3;
+	}
+	else if(goukei == 41 || goukei ==32 || goukei ==43){
+    	kekka = 4;
 	}
 	return kekka;
 };
